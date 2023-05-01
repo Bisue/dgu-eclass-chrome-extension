@@ -1,0 +1,11 @@
+.bisue-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  width: 100%;
+  background: #bae6fd;
+  color: #171717;
+  padding: 1.5rem;
+}
