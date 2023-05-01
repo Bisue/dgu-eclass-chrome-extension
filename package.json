@@ -1,6 +1,6 @@
 {
-  "name": "dongguk-helper",
-  "displayName": "Dongguk helper",
+  "name": "dongguk-extended-eclass",
+  "displayName": "Dongguk univ. extended eclass",
   "version": "0.0.1",
   "description": "Offer useful features to dongguk university eclass website.",
   "author": "Bisue",
@@ -26,7 +26,7 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
+      "https://eclass.dongguk.edu/*"
     ]
   }
 }
