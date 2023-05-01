@@ -7,10 +7,10 @@ export const config: PlasmoCSConfig = {
 
 window.addEventListener("load", () => {
   // setTimeout(() => {
-  console.log("동국대 이클래스 헬퍼 - CSE 18th BCH")
+  console.log("동국대 Extended Eclass - CSE 18th BCH")
 
   const newHeader = document.createElement("div")
-  newHeader.textContent = "동국대 이클래스 헬퍼 적용 완료"
+  newHeader.textContent = "동국대 Extended Eclass - Enabled"
   newHeader.className = "bisue-header"
 
   const header = document.querySelector("#header") as HTMLElement
