@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
   // header.style.background = "#bae6fd"
   // header.style.color = "#171717"
 
-  header.insertBefore(newHeader, header.firstChild)
+  // header.insertBefore(newHeader, header.firstChild)
 
   // const dummy = document.createElement("div")
   // dummy.style.height = "80px"
