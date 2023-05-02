@@ -9,11 +9,11 @@ window.addEventListener("load", () => {
   // setTimeout(() => {
   console.log("동국대 Extended Eclass - CSE 18th BCH")
 
-  const newHeader = document.createElement("div")
-  newHeader.textContent = "동국대 Extended Eclass - Enabled"
-  newHeader.className = "bisue-header"
+  // const newHeader = document.createElement("div")
+  // newHeader.textContent = "동국대 Extended Eclass - Enabled"
+  // newHeader.className = "bisue-header"
 
-  const header = document.querySelector("#header") as HTMLElement
+  // const header = document.querySelector("#header") as HTMLElement
   // header.style.transition = "background 0.5s"
   // header.style.background = "#bae6fd"
   // header.style.color = "#171717"
