@@ -1,13 +1,13 @@
-import type { PlasmoCSConfig } from "plasmo"
+import type { PlasmoCSConfig } from 'plasmo';
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://eclass.dongguk.edu/Main.do*"],
-  css: ["main.css"]
-}
+  matches: ['https://eclass.dongguk.edu/Main.do*'],
+  css: ['main.css'],
+};
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   // setTimeout(() => {
-  console.log("동국대 Extended Eclass - CSE 18th BCH")
+  console.log('동국대 Extended Eclass - CSE 18th BCH');
 
   // const newHeader = document.createElement("div")
   // newHeader.textContent = "동국대 Extended Eclass - Enabled"
@@ -25,4 +25,4 @@ window.addEventListener("load", () => {
   // const container = document.querySelector("#container") as HTMLElement
   // container.insertBefore(dummy, container.firstChild)
   // }, 1000)
-})
+});
