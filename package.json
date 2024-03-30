@@ -1,8 +1,8 @@
 {
   "name": "dongguk-extended-eclass",
-  "displayName": "동국대학교 Extended Eclass",
+  "displayName": "동국대학교 Eclass Extension",
   "version": "0.0.1",
-  "description": "동국대학교 Eclass의 기능을 확장하는 크롬 확장프로그램.",
+  "description": "동국대학교 Eclass에 기능을 추가하는 크롬 확장프로그램.",
   "author": "Bisue",
   "packageManager": "pnpm@7.28.0",
   "scripts": {
