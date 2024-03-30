@@ -1,6 +1,6 @@
-# 동국대학교 Extended Eclass
+# 동국대학교 Eclass Extension
 
-> 동국대학교 Eclass의 기능을 확장하는 크롬 Extension
+> 동국대학교 Eclass에 기능을 추가하는 크롬 Extension
 
 [동국대학교 Eclass](https://eclass.dongguk.edu/Main.do?cmd=viewHome)
 
