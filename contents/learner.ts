@@ -5,9 +5,12 @@ export const config: PlasmoCSConfig = {
   //   css: ["learner.css"]
 };
 
-async function deblurring(document) {
+/**
+ * 수강자 조회 디블러링
+ */
+async function deblurring(document: Document) {
   try {
-    const ids = [...document.querySelectorAll('#listBox input[type="checkbox"]:not(#checkAll)')].map(e => e.value);
+    const ids = Array.from(document.querySelectorAll('#listBox input[type="checkbox"]:not(#checkAll)')).map((e: HTMLInputElement) => e.value);
     const url = `https://eclass.dongguk.edu/Message.do?cmd=sendMessageForm&gubun=popup&messageSendDTO.receiverId=${ids.join(',')}&messageSendDTO.courseId=`;
 
     const response = await fetch(url);
@@ -18,7 +21,7 @@ async function deblurring(document) {
 
     const names = (doc.querySelector('.boardListPopup tr:first-child td') as HTMLElement).innerText.trim().split(',');
 
-    const courseName = document.querySelector('#headerContent a').innerText.trim();
+    const courseName = (document.querySelector('#headerContent a') as HTMLElement).innerText.trim();
     let message = `%c[${courseName}] 수강자 목록\n\n%c`;
     message += ids.map((id, idx) => `\t${id} / ${names[idx]}`).join('\n');
     message += `\n\nmade by CSE 18th`;
@@ -41,6 +44,9 @@ async function deblurring(document) {
   }
 }
 
+/**
+ * Injection
+ */
 window.addEventListener('load', () => {
   const frame = document.querySelector("frame[name='main']") as HTMLFrameElement;
   if (frame) {

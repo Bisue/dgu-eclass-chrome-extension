@@ -1,9 +1,12 @@
 import type { PlasmoCSConfig } from 'plasmo';
 
 export const config: PlasmoCSConfig = {
-  matches: ['https://eclass.dongguk.edu/*'],
+  // matches: ['https://eclass.dongguk.edu/*'],
 };
 
+/**
+ * 수강 중인 강의 ID 가져오기
+ */
 async function fetchCourses() {
   const url = `/Main.do?cmd=viewHome`;
 
@@ -16,11 +19,14 @@ async function fetchCourses() {
 
   const courseRows = dom.querySelectorAll(`[name="courseDTO.courseId"] option:not(:first-child)`);
 
-  const courseIds = [...courseRows].map(row => row.getAttribute('value').split(',')[0]);
+  const courseIds = Array.from(courseRows).map(row => row.getAttribute('value').split(',')[0]);
 
   return courseIds;
 }
 
+/**
+ * 공지사항 가져오기 (페이지 별)
+ */
 async function fetchNoticesPerPage(boardInfoId: string, courseId: string, page = 1) {
   const url = `/Course.do?cmd=viewBoardContentsList&boardInfoDTO.boardInfoGubun=notice&boardInfoDTO.boardInfoId=${boardInfoId}&boardInfoDTO.boardClass=notice&boardInfoDTO.boardType=course&courseDTO.courseId=${courseId}&mainDTO.parentMenuId=menu_00048&mainDTO.menuId=menu_00056&curPage=${page}`;
 
@@ -34,7 +40,7 @@ async function fetchNoticesPerPage(boardInfoId: string, courseId: string, page =
   // all articles
   const rows = dom.querySelectorAll('table.boardListBasic tbody tr');
   // filter out pinned articles
-  const filteredRows = [...rows].filter(row => {
+  const filteredRows = Array.from(rows).filter(row => {
     return !row.querySelector('td:first-child').textContent.includes('공지');
   });
 
@@ -53,6 +59,9 @@ async function fetchNoticesPerPage(boardInfoId: string, courseId: string, page =
   return articles;
 }
 
+/**
+ * 공지사항 가져오기 (전체)
+ */
 async function fetchNotices(boardInfoId: string, courseId: string) {
   let articles = [];
   for (let page = 1; page < 100; page++) {
@@ -65,6 +74,9 @@ async function fetchNotices(boardInfoId: string, courseId: string) {
   return articles;
 }
 
+/**
+ * Injection
+ */
 window.addEventListener('load', async () => {
   const dict = {};
 

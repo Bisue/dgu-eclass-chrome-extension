@@ -5,6 +5,9 @@ export const config: PlasmoCSConfig = {
   css: ['report.css'],
 };
 
+/**
+ * 과제 제출률 정보 가져오기
+ */
 function getSubmitInfo(document: HTMLDocument) {
   const infoTable = document.querySelectorAll('#listBox .boardListWrite tbody')[1];
   if (!infoTable) {
@@ -12,7 +15,7 @@ function getSubmitInfo(document: HTMLDocument) {
   }
 
   const tempEl = document.createElement('div');
-  tempEl.innerHTML = ([...infoTable.childNodes].find(el => el.nodeType == 8) as Comment).data.trim();
+  tempEl.innerHTML = (Array.from(infoTable.childNodes).find(el => el.nodeType == 8) as Comment).data.trim();
   document.body.appendChild(tempEl);
 
   const dataRaw = tempEl.innerText;
@@ -33,6 +36,9 @@ function getSubmitInfo(document: HTMLDocument) {
   };
 }
 
+/**
+ * Injection
+ */
 window.addEventListener('load', () => {
   let submitInfo: ReturnType<typeof getSubmitInfo>;
 
