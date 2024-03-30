@@ -1,11 +1,15 @@
-.bisue-header {
+.bisue-caption {
+  position: fixed;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 14px;
   font-weight: bold;
-  width: 100%;
-  background: #bae6fd;
-  color: #171717;
-  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  width: auto;
+  color: #ffffff;
+  padding: 0.5rem;
+  z-index: 99999;
 }
