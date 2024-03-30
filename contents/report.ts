@@ -19,7 +19,6 @@ function getSubmitInfo(document: HTMLDocument) {
   document.body.appendChild(tempEl);
 
   const dataRaw = tempEl.innerText;
-  console.log(dataRaw);
   const reportInfoDTORaw = dataRaw.split('ReportInfoDTO')[1];
 
   const submitCnt = Number.parseInt(reportInfoDTORaw.match(/submitCnt=([0-9]+),/)[1]);

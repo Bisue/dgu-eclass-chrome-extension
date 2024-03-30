@@ -85,6 +85,4 @@ window.addEventListener('load', async () => {
     const articles = await fetchNotices(course + 'N', course);
     dict[course] = articles;
   }
-
-  console.log(dict);
 });

@@ -11,12 +11,9 @@ export const config: PlasmoCSConfig = {
  */
 window.addEventListener('load', () => {
   const frame = document.querySelector("frame[name='main']") as HTMLFrameElement;
-  console.log('frame', frame);
 
   if (frame) {
     const path = '/' + frame.getAttribute('src');
-
-    console.log('path', path);
 
     location.href = path;
   }

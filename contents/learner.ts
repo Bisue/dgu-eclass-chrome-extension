@@ -21,16 +21,6 @@ async function deblurring(document: Document) {
 
     const names = (doc.querySelector('.boardListPopup tr:first-child td') as HTMLElement).innerText.trim().split(',');
 
-    const courseName = (document.querySelector('#headerContent a') as HTMLElement).innerText.trim();
-    let message = `%c[${courseName}] 수강자 목록\n\n%c`;
-    message += ids.map((id, idx) => `\t${id} / ${names[idx]}`).join('\n');
-    message += `\n\nmade by CSE 18th`;
-    console.log(
-      message,
-      'color: #ffffff; background-color: #047857; font-size: 1.25rem; font-weight: bold;',
-      'color: #ffffff; font-size: 1rem; line-height: 1.6;'
-    );
-
     const nameSlots = document.querySelectorAll('#listBox .boardListBasic tbody tr td:last-child');
     const idSlots = document.querySelectorAll('#listBox .boardListBasic tbody tr td:nth-child(5)');
     names.forEach((name, idx) => {
