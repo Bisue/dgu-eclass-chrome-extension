@@ -35,4 +35,4 @@
 
 ### 크롬 웹 스토어
 
-- (준비중)
+- [스토어 링크 (not stable)](https://chromewebstore.google.com/detail/gpbceagdpcppnmhannjcjdbnpodkecem)
